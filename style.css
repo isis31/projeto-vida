@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap');
+
+:root {
+    --cor-de-fundo: #1E1E1E;
+    --verde: #6FFF57;
+    --branco: #FFFFFF;
+    --botao-ativo: #3A375E;
+    --botao-inativo: rgba(58, 55, 94, 0.5);
+    --texto-fundo: rgba(58, 55, 94, 0.3);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--cor-de-fundo);
+    color: var(--branco);
+    font-family: 'Chakra Petch', sans-serif;
+    margin: 0;
+    padding: 40px 20px;
+}
+
+.conteudo-principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.titulo-principal {
+    text-align: left;
+    width: 100%;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.titulo-principal span {
+    color: var(--verde);
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+.botoes {
+    width: 100%;
+    display: flex;
+}
+
+.botao {
+    font-family: 'Chakra Petch', sans-serif;
+    background-color: var(--botao-inativo);
+    color: var(--branco);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 1em;
+    font-size: 18px;
+
+    width: 100%;
+
+    border: 2px solid var(--botao-ativo);
+    border-bottom: 4px solid var(--botao-ativo);
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.botao:hover {
+    background-color: var(--botao-ativo);
+}
+
+.botao.ativo {
+    background-color: var(--botao-ativo);
+    color: var(--verde);
+}
+
+
+/* Bordas dos primeiros e últimos botões */
+
+.botoes-principais .botao:first-child {
+    border-radius: 40px 0 0 0;
+}
+
+.botoes-principais .botao:last-child {
+    border-radius: 0 40px 0 0;
+}
+
+.botoes-secundarios .botao:first-child {
+    border-radius: 40px 0 0 0;
+}
+
+.botoes-secundarios .botao:last-child {
+    border-radius: 0 40px 0 0;
+}
+
+
+/* =========================
+   CONTEÚDO DOS OBJETIVOS
+========================= */
+
+.conteudo-objetivo {
+    display: none;
+
+    width: 100%;
+    padding: 35px;
+
+    background-color: var(--texto-fundo);
+
+    border-left: 2px solid var(--botao-ativo);
+    border-right: 2px solid var(--botao-ativo);
+    border-bottom: 2px solid var(--botao-ativo);
+
+    min-height: 150px;
+}
+
+.conteudo-objetivo.ativo {
+    display: block;
+}
+
+.conteudo-objetivo h3 {
+    font-size: 26px;
+    margin-top: 0;
+    color: var(--verde);
+}
+
+.conteudo-objetivo p {
+    font-size: 18px;
+}
+
+
+/* =========================
+   ÁREA PROFISSIONAL
+========================= */
+
+.area-profissional {
+    width: 100%;
+    margin-top: 50px;
+}
+
+.abas-textos {
+    width: 100%;
+}
+
+.aba-conteudo {
+    display: none;
+
+    padding: 45px;
+
+    min-height: 300px;
+
+    background-color: var(--texto-fundo);
+
+    border-left: 2px solid var(--botao-ativo);
+    border-right: 2px solid var(--botao-ativo);
+    border-bottom: 2px solid var(--botao-ativo);
+}
+
+.aba-conteudo.ativo {
+    display: block;
+}
+
+.aba-conteudo-titulo-principal {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.aba-conteudo-titulo-secundario {
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--verde);
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media screen and (max-width: 767px) {
+
+    body {
+        padding: 20px 15px;
+    }
+
+    .titulo-principal {
+        font-size: 26px;
+    }
+
+    .botoes {
+        flex-direction: column;
+    }
+
+    .botao {
+        border-radius: 0 !important;
+    }
+
+    .botoes-principais .botao:first-child,
+    .botoes-secundarios .botao:first-child {
+        border-radius: 25px 25px 0 0 !important;
+    }
+
+    .botoes-principais .botao:last-child,
+    .botoes-secundarios .botao:last-child {
+        border-radius: 0 0 25px 25px !important;
+    }
+
+    .aba-conteudo,
+    .conteudo-objetivo {
+        padding: 25px;
+    }
+
+    .aba-conteudo-titulo-principal {
+        font-size: 23px;
+    }
+
+}
